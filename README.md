@@ -45,11 +45,28 @@ page-donation-solona/
 - Statut activé/désactivé
 - Rafraîchissement automatique
 
+### 💰 Distribution Professionnelle (NOUVEAU)
+- **Distribution équitable**: Montant divisé également entre wallets sélectionnés
+- **Distribution par pourcentage**: Répartition personnalisée selon des %
+- Sélection multiple de wallets (activer/désactiver)
+- Aperçu en temps réel de la distribution
+- Validation des montants et pourcentages
+- Exécution sécurisée avec confirmation
+- Voir [DISTRIBUTION_GUIDE.md](DISTRIBUTION_GUIDE.md) pour plus de détails
+
 ### 💼 Wallets
 - Gestion des projets
 - Ajout/modification de projets
 - Activation/désactivation
 - Gestion des adresses Solana
+
+### ⚙️ Paramètres (NOUVEAU)
+- Modifier les adresses des wallets
+- Renommer les projets
+- Supprimer des projets
+- Validation des adresses Solana
+- Interface intuitive avec dialogues de confirmation
+- Voir [SETTINGS_GUIDE.md](SETTINGS_GUIDE.md) pour plus de détails
 
 ### 📈 Trading
 - Bots de trading automatisés
@@ -99,10 +116,12 @@ Fichier de configuration des 12 projets avec:
 
 ## 🎨 Interface Utilisateur
 
-L'interface comprend 3 onglets:
+L'interface comprend 5 onglets:
 1. **📊 Dashboard** - Vue d'ensemble des projets et liquidités
-2. **💼 Wallets** - Gestion des wallets et projets
-3. **📈 Trading** - Contrôle des bots de trading
+2. **💰 Distribution** - Options professionnelles de distribution (NOUVEAU)
+3. **💼 Wallets** - Gestion des wallets et projets
+4. **⚙️ Paramètres** - Configuration et édition des wallets (NOUVEAU)
+5. **📈 Trading** - Contrôle des bots de trading
 
 ## ✅ Imports Corrigés
 
@@ -151,6 +170,10 @@ Le script vérifie:
 
 ## 🔜 Prochaines Étapes
 
+- [x] Distribution équitable entre wallets
+- [x] Distribution par pourcentage
+- [x] Édition des adresses wallets
+- [x] Renommage des projets
 - [ ] Graphique par projet
 - [ ] Historique des injections
 - [ ] Synchronisation injection → dashboard
