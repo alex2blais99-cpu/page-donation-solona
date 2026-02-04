@@ -12,6 +12,10 @@ from trading.main import TradingBot
 from trading.config import BOTS
 from ui.ui_wallets import WalletTab
 from ui.ui_dashboard import DashboardTab
+from ui.ui_distribution import DistributionTab
+from ui.ui_settings import SettingsTab
+from core.liquidity_tracker import LiquidityTracker
+from core.wallet_manager import WalletManager
 from pathlib import Path
 
 class MainWindow(QMainWindow):
@@ -19,7 +23,12 @@ class MainWindow(QMainWindow):
         super().__init__()
         
         self.setWindowTitle("AutoTrading Bot - Solana Donation Tracker")
-        self.setMinimumSize(1000, 700)
+        self.setMinimumSize(1200, 800)
+        
+        # Initialize shared liquidity tracker
+        manager = WalletManager()
+        data = manager.load()
+        self.tracker = LiquidityTracker(data["projects"])
         
         # Central widget
         central = QWidget()
@@ -40,10 +49,17 @@ class MainWindow(QMainWindow):
         self.tabs = QTabWidget()
         
         # Add Dashboard tab (first)
-        self.tabs.addTab(DashboardTab(), "📊 Dashboard")
+        self.dashboard_tab = DashboardTab(self.tracker)
+        self.tabs.addTab(self.dashboard_tab, "📊 Dashboard")
+        
+        # Add Distribution tab (NEW - professional options)
+        self.tabs.addTab(DistributionTab(self.tracker), "💰 Distribution")
         
         # Add Wallets tab
         self.tabs.addTab(WalletTab(), "💼 Wallets")
+        
+        # Add Settings tab (NEW - edit wallets)
+        self.tabs.addTab(SettingsTab(), "⚙️ Paramètres")
         
         # Add Trading tab
         self.tabs.addTab(self.create_trading_tab(), "📈 Trading")

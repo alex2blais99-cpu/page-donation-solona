@@ -13,14 +13,19 @@ from core.liquidity_tracker import LiquidityTracker
 from core.price_feed import PriceFeed
 
 class DashboardTab(QWidget):
-    def __init__(self):
+    def __init__(self, tracker=None):
         super().__init__()
 
         self.manager = WalletManager()
         self.data = self.manager.load()
 
         self.price_feed = PriceFeed()
-        self.tracker = LiquidityTracker(self.data["projects"])
+        
+        # Use provided tracker or create new one
+        if tracker:
+            self.tracker = tracker
+        else:
+            self.tracker = LiquidityTracker(self.data["projects"])
 
         layout = QVBoxLayout(self)
 
