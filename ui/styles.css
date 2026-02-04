@@ -1,0 +1,80 @@
+/* Styles for AutoTrading Bot UI */
+
+QMainWindow {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+QLabel {
+    color: #ffffff;
+    padding: 5px;
+}
+
+QPushButton {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #0052a3;
+}
+
+QPushButton:disabled {
+    background-color: #666666;
+}
+
+QTableWidget {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    gridline-color: #444444;
+    border: 1px solid #444444;
+}
+
+QTableWidget::item {
+    padding: 5px;
+}
+
+QTableWidget::item:selected {
+    background-color: #0066cc;
+}
+
+QHeaderView::section {
+    background-color: #3d3d3d;
+    color: #ffffff;
+    padding: 8px;
+    border: 1px solid #444444;
+    font-weight: bold;
+}
+
+QLineEdit {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border: 1px solid #444444;
+    padding: 6px;
+    border-radius: 3px;
+}
+
+QTabWidget::pane {
+    border: 1px solid #444444;
+    background-color: #1e1e1e;
+}
+
+QTabBar::tab {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #444444;
+    border-bottom: none;
+}
+
+QTabBar::tab:selected {
+    background-color: #0066cc;
+}
+
+QTabBar::tab:hover {
+    background-color: #3d3d3d;
+}
